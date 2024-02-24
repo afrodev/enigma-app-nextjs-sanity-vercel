@@ -11,6 +11,7 @@ import { Navbar } from '@/components/global/Navbar'
 import IntroTemplate from '@/intro-template'
 import { urlForOpenGraphImage } from '@/sanity/lib/utils'
 import { loadHomePage, loadSettings } from '@/sanity/loader/loadQuery'
+import { Analytics } from '@vercel/analytics/react'
 
 const LiveVisualEditing = dynamic(
   () => import('@/sanity/loader/LiveVisualEditing'),
@@ -50,6 +51,7 @@ export default async function IndexRoute({
 }) {
   return (
     <>
+      <Analytics />
       <div className="flex min-h-screen flex-col bg-white text-black">
         <Suspense>
           <Navbar />
